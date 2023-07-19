@@ -1,0 +1,23 @@
+{% import "macros/page.html" as page_macros %}
+{% extends "base.html" %}
+
+{% block title %}{{ trans(key="tutorials", lang=lang) }} - {{ config.title }}{% endblock title %}
+
+{% block content %}
+<main id="main" tabindex="-1">
+    {% set tutorial_categories = load_data(path="content/tutorials/categories." ~ lang ~ ".json", required=false) %}
+    {% if not tutorial_categories %}
+        {% set tutorial_categories = load_data(path="content/tutorials/categories.json") %}
+    {% endif %}
+
+    {% for category, tag in tutorial_categories %}
+        <h1>{{ category }}</h1>
+        {% for page in section.pages %}
+            {% if page.taxonomies.categories is containing(tag) %}
+                {{ page_macros::project_listing(page=page) }}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+</main>
+{% endblock content %}

@@ -11,7 +11,7 @@ compile_sass = true
 build_search_index = false
 
 # When set to "true", a feed is automatically generated.
-generate_feed = true
+generate_feeds = true
 
 [markdown]
 # When set to "true", all code blocks are highlighted.
@@ -21,8 +21,8 @@ highlight_code = true
 # See Zola configuration docs for list of allowed values.
 highlight_theme = "css"
 highlight_themes_css = [
-  { theme = "material-dark", filename = "syntax-theme-dark.css" },
-  { theme = "material-light", filename = "syntax-theme-light.css" },
+    { theme = "material-dark", filename = "syntax-theme-dark.css" },
+    { theme = "material-light", filename = "syntax-theme-light.css" },
 ]
 
 [languages]
@@ -30,8 +30,7 @@ highlight_themes_css = [
 [languages.en]
 title = "Papaya"
 description = "A clean Zola theme for blogging and projects"
-generate_feed = true
-feed_filename = "atom.xml"
+generate_feeds = true
 # The taxonomies to be rendered for the site and their configuration of the default languages
 taxonomies = [
     { name = "tags", feed = true, lang = "en" },
@@ -64,7 +63,7 @@ date_format = "%B %e, %Y"
 title = "帕帕雅"
 description = "一个清新的 Zola 博客与项目模板"
 base_url = "https://justintennant.me/papaya/zh"
-generate_feed = true
+generate_feeds = true
 # The taxonomies to be rendered for the site and their configuration of the default languages
 taxonomies = [
     { name = "tags", feed = true, lang = "zh" },
@@ -131,7 +130,7 @@ zhihu = "your-user-name"
 weibo = "your-user-name"
 bilibili = "your-user-name"
 other = [
-    { name = "BTC", font_awesome = "fa-brands fa-btc", url = "https://www.bitcoin.com/" }
+    { name = "BTC", font_awesome = "fa-brands fa-btc", url = "https://www.bitcoin.com/" },
 ]
 
 # CDN links
